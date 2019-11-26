@@ -1,5 +1,47 @@
 <html>
-    <head>
-        <title>Car Game</title>
-    </head>
+
+<head>
+    <title>Car Gamezzz</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50vh;
+            left: 50vw;
+            transition: margin-left 0.01s linear, margin-top 0.01s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="car" src="https://static.thenounproject.com/png/139789-200.png" />
+
+    <script>
+        var x = 0;
+        var y = 0;
+
+        var car = document.getElementById("car");
+
+        document.addEventListener("keydown", function (event) {
+            if (event.code === "ArrowUp") {
+                y -= 80;
+            }
+            if (event.code === "ArrowDown") {
+                y = y + 80;
+            }
+            if (event.code === "ArrowLeft") {
+                x = x - 80;
+            }
+            if (event.code === "ArrowRight") {
+                x = x + 80;
+            }
+
+            console.log(x, y);
+            car.style.marginLeft = x + "px";
+            car.style.marginTop = y + "px";
+        })
+    </script>
+</body>
+
 </html>
